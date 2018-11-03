@@ -1,0 +1,42 @@
+{
+    "name": "skylerkatz/rackspace-log-parser",
+    "description": "Parse Rackspace Cloud Files Access Logs in an object oriented way",
+    "keywords": [
+        "skylerkatz",
+        "rackspace-log-parser"
+    ],
+    "homepage": "https://github.com/skylerkatz/rackspace-log-parser",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Skyler Katz",
+            "email": "skylerkatz@gmail.com",
+            "homepage": "https://about.me/skylerkatz",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "5.7.27"
+    },
+    "autoload": {
+        "psr-4": {
+            "SkylerKatz\\RackspaceLogParser\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SkylerKatz\\RackspaceLogParser\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
