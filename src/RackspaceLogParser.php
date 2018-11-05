@@ -5,29 +5,28 @@ namespace SkylerKatz\RackspaceLogParser;
 class RackspaceLogParser
 {
     /**
-     * Rexeg Pattern to match Rackspace Cloud Files Logs
+     * Rexeg Pattern to match Rackspace Cloud Files Logs.
      */
     const PATTERN = '/^([^ ]+) ([^ ]+) ([^ ]+) (\[[^\]]+\]) "(.*) (.*) (.*)" ([0-9\-]+) ([0-9\-]+) "(.*)" "(.*)/m';
 
     /**
-     * Max Buffer size for reading log file
+     * Max Buffer size for reading log file.
      */
     const BUFFER_SIZE = 4096;
 
     /**
-     * The path to the log file
+     * The path to the log file.
      *
      * @var string
      */
     protected $path;
 
     /**
-     * The log file in memory
+     * The log file in memory.
      *
      * @var string
      */
     protected $log;
-
 
     /**
      * Create a new RackspaceLogParser Instance.
@@ -41,7 +40,7 @@ class RackspaceLogParser
     }
 
     /**
-     * Parse a log file into an arrray of LogItems
+     * Parse a log file into an arrray of LogItems.
      *
      * @return array
      */
@@ -58,7 +57,7 @@ class RackspaceLogParser
     }
 
     /**
-     * read a log file into memory
+     * read a log file into memory.
      *
      * @return void
      */
@@ -69,7 +68,7 @@ class RackspaceLogParser
 
         // Keep repeating until the end of the input file
         $log = '';
-        while (!gzeof($file)) {
+        while (! gzeof($file)) {
             $log .= gzread($file, self::BUFFER_SIZE);
         }
 
@@ -82,7 +81,7 @@ class RackspaceLogParser
     }
 
     /**
-     * Get the rows of a log
+     * Get the rows of a log.
      *
      * @return array
      */
@@ -92,7 +91,7 @@ class RackspaceLogParser
     }
 
     /**
-     * Parse a row into its component parts
+     * Parse a row into its component parts.
      *
      * @param string $row
      * @return array
@@ -105,7 +104,7 @@ class RackspaceLogParser
     }
 
     /**
-     * Create a Log Item from a parsed log row
+     * Create a Log Item from a parsed log row.
      *
      * @param array $entry
      * @return LogItem
@@ -129,7 +128,7 @@ class RackspaceLogParser
     }
 
     /**
-     * Parse a log date
+     * Parse a log date.
      *
      * @param string $date
      * @return \Carbon\Carbon
@@ -139,6 +138,7 @@ class RackspaceLogParser
         $accessDate = str_replace('[', '', $date);
         $accessDate = str_replace(']', '', $accessDate);
         $accessDate = explode(' ', $accessDate);
+
         return \Carbon\Carbon::createFromFormat('d/m/Y:H:i:s', $accessDate[0], new \DateTimeZone('UTC'));
     }
 }
