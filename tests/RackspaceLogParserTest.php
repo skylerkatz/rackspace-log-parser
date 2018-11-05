@@ -10,7 +10,7 @@ class RackspaceLogParserTest extends TestCase
     /** @test */
     public function it_can_parse_a_log_file()
     {
-        $path = __DIR__ . '/stubs/cloudfiles.log.stub';
+        $path = __DIR__.'/stubs/cloudfiles.log.stub';
 
         $parser = new RackspaceLogParser($path);
         $result = $parser->parse();
