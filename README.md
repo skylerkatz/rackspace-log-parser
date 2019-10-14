@@ -6,7 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/skylerkatz/rackspace-log-parser.svg?style=flat-square)](https://packagist.org/packages/skylerkatz/rackspace-log-parser)
 
 
-Rackspace Cloud Files provides access logs for all items uploaded to your account.  Since log files can be confusing to work with, this package will parse a log file and generate an array of easy to use Objects, each representing a row in the log.
+Rackspace Cloud Files provides access logs for all items uploaded to your account.  Since log files can be confusing to work with, this package will parse a log file and generate an array of easy to use objects, each representing a row in the log.
 
 ## Installation
 
