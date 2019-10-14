@@ -21,7 +21,7 @@
     },
     "require-dev": {
         "larapack/dd": "^1.0",
-        "phpunit/phpunit": "5.7.27"
+        "phpunit/phpunit": "^8.4"
     },
     "autoload": {
         "psr-4": {
