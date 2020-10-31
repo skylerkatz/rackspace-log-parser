@@ -68,7 +68,7 @@ class RackspaceLogParser
 
         // Keep repeating until the end of the input file
         $log = '';
-        while (! gzeof($file)) {
+        while (!gzeof($file)) {
             $log .= gzread($file, self::BUFFER_SIZE);
         }
 
@@ -94,6 +94,7 @@ class RackspaceLogParser
      * Parse a row into its component parts.
      *
      * @param string $row
+     *
      * @return array
      */
     private function parseRow($row)
@@ -107,6 +108,7 @@ class RackspaceLogParser
      * Create a Log Item from a parsed log row.
      *
      * @param array $entry
+     *
      * @return LogItem
      */
     private function createLogItem($entry)
@@ -131,6 +133,7 @@ class RackspaceLogParser
      * Parse a log date.
      *
      * @param string $date
+     *
      * @return \Carbon\Carbon
      */
     private function parseDate($date)
